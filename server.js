@@ -22,6 +22,7 @@ app.post('*', (req,res) => {
      res.setHeader('Content-Type', 'text/json')
 //      res.write('you posted:\n')
      res.end(JSON.stringify(req.body, null, 2))
+	console.log(JSON.stringify(req.body, null, 2))
 //     res.json({"requestBody": #(bo)});
 });
 
