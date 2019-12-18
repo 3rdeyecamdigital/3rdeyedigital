@@ -18,7 +18,7 @@ app.get('/', function(req, res) {
 	res.render('index');
 });
 
-app.post('/callback', (req,res) => {
+app.post('*', (req,res) => {
   console.log(req.ip);
   console.log(req.originalUrl);
   console.log(util.inspect(req.body, {showHidden: false, depth: null}));
@@ -33,6 +33,8 @@ app.post('/callback', (req,res) => {
   } else {
     res.json({status:"ok"})
   }
+
+});
 
 app.listen(port, function() {
 	console.log('Our app is running on http://localhost:' + port);
