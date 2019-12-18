@@ -1,12 +1,13 @@
 var express = require('express');
 var app = express();
-app.use(express.json());
+var bodyParser = require('body-parser')
+// app.use(express.json());
 // set the port of our application
 // process.env.PORT lets the port be set by Heroku
 var port = process.env.PORT || 8080;
 // set the view engine to ejs
 app.set('view engine', 'ejs');
-
+app.use(bodyParser.json())
 // make express look in the public directory for assets (css/js/img)
 app.use(express.static(__dirname + '/public'));
 
@@ -18,8 +19,10 @@ app.get('/', function(req, res) {
 });
 
 app.post('*', (req,res) => {
-	var bo=req.body;
-    res.json({"requestBody": #(bo)});
+     res.setHeader('Content-Type', 'text/json')
+     res.write('you posted:\n')
+     res.end(JSON.stringify(req.body, null, 2))
+//     res.json({"requestBody": #(bo)});
 });
 
 app.listen(port, function() {
