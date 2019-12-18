@@ -18,7 +18,7 @@ app.get('/', function(req, res) {
 });
 
 app.post('*', (req,res) => {
-	var body=req.body;
+	var body=req.body.Hello;
     res.json({"requestBody": body});
 });
 
