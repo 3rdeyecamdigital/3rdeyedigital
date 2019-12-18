@@ -1,6 +1,6 @@
 var express = require('express');
 var app = express();
-const util = require('util')
+var body_parser = require('body-parser')
 // set the port of our application
 // process.env.PORT lets the port be set by Heroku
 var port = process.env.PORT || 8080;
@@ -18,7 +18,8 @@ app.get('/', function(req, res) {
 });
 
 app.post('/callback', (req,res) => {
-    res.json({"requestBody": req.body});
+	var body=req.body;
+    res.json({"requestBody": body});
 });
 
 app.listen(port, function() {
