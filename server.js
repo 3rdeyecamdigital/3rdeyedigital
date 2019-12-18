@@ -19,7 +19,10 @@ app.get('/', function(req, res) {
 });
 
 app.post('*', (req,res) => {
-	if(req.originalUrl = "/refresh") {
+console.log(req.ip);
+  console.log(req.originalUrl);
+  console.log(util.inspect(req.body, {showHidden: false, depth: null}));
+  if(req.originalUrl = "/refresh") {
     res.json({
       access_token:"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJtYXR0aGV3LmFsbGVuQGJsdWV3b2xmZ3JvdXAuY29tIiwic3ViIjoiU0ZEQyB0ZWFtIC0gYmx1ZSB3b2xmICAiLCJqdGkiOiJVTklRVUVJRC1tYXR0aGV3LmFsbGVuIiwic2NvcGUiOlsic2VsZiIsImFkbWlucyJdLCJpYXQiOjE1MjIyNzU4NzYsImV4cCI6MTUzODA4NzA3Nn0.lWBLx0rptkGDNHiSuXoPKClwFvPGgG4GBQAOtSldQyo",
       token_type: "Bearer",
