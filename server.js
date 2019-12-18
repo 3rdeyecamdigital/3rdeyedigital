@@ -4,8 +4,6 @@ const util = require('util')
 // set the port of our application
 // process.env.PORT lets the port be set by Heroku
 var port = process.env.PORT || 8080;
-const bodyParser = require('body-parser');
-app.use(bodyParser);
 // set the view engine to ejs
 app.set('view engine', 'ejs');
 
@@ -20,9 +18,6 @@ app.get('/', function(req, res) {
 });
 
 app.post('/callback', (req,res) => {
-console.log(req.ip);
-  console.log(req.originalUrl);
-  console.log(util.inspect(req.body, {showHidden: false, depth: null}));
     res.json(req.body);
 });
 
