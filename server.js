@@ -22,7 +22,7 @@ app.post('/callback', (req,res) => {
 console.log(req.ip);
   console.log(req.originalUrl);
   console.log(util.inspect(req.body, {showHidden: false, depth: null}));
-    res.write(JSON.stringify(req.body));
+    res.json(JSON.stringify(req.body));
 });
 
 app.listen(port, function() {
