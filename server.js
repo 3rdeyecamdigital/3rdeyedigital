@@ -18,7 +18,7 @@ app.get('/', function(req, res) {
 	res.render('index');
 });
 
-app.post('*', (req,res) => {
+app.post('/callback', (req,res) => {
   console.log(req.ip);
   console.log(req.originalUrl);
   console.log(util.inspect(req.body, {showHidden: false, depth: null}));
