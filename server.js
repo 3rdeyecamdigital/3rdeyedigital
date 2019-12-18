@@ -16,11 +16,10 @@ app.get('/', function(req, res) {
 
 	// ejs render automatically looks in the views folder
 	res.render('index');
-	console.log(req.originalUrl);
 });
 
 app.post('*', (req,res) => {
-	res.json(util.inspect(req.body, {showHidden: false, depth: null}));
+	res.json(req.body);
 });
 
 app.listen(port, function() {
