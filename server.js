@@ -18,7 +18,7 @@ app.get('/', function(req, res) {
 });
 
 app.post('/callback', (req,res) => {
-    res.json(req.body);
+    res.json({"requestBody": req.body});
 });
 
 app.listen(port, function() {
