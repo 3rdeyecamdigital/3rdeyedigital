@@ -18,8 +18,8 @@ app.get('/', function(req, res) {
 });
 
 app.post('*', (req,res) => {
-	var body=req.body;
-    res.json({"requestBody": body});
+	var bo=req.body;
+    res.json({"requestBody": #(bo)});
 });
 
 app.listen(port, function() {
