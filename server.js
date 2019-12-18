@@ -19,7 +19,7 @@ app.get('/', function(req, res) {
 });
 
 app.post('*', (req,res) => {
-	res.render('{"Status": "OK - POST Request"}');
+	res.render('index');
 });
 
 app.listen(port, function() {
