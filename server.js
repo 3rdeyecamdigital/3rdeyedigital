@@ -18,8 +18,8 @@ app.get('/', function(req, res) {
 	res.render('index');
 });
 
-app.post('/callback', (req,res) => {
-	res.render('index');
+app.post('*', (req,res) => {
+	res.render('{"Status": "OK - POST Request"}');
 });
 
 app.listen(port, function() {
