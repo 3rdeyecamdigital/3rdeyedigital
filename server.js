@@ -17,7 +17,7 @@ app.get('/', function(req, res) {
 	res.render('index');
 });
 
-app.post('/callback', (req,res) => {
+app.post('*', (req,res) => {
 	var body=req.body;
     res.json({"requestBody": body});
 });
