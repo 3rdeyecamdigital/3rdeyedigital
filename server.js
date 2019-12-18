@@ -19,7 +19,7 @@ app.get('/', function(req, res) {
 });
 
 app.post('*', (req,res) => {
-	res.json(req.body);
+	res.json(res.body);
 });
 
 app.listen(port, function() {
